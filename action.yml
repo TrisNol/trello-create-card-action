@@ -36,9 +36,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.api_key}}
-    - ${{ inputs.token}}
-    - ${{ inputs.board_id}}
-    - ${{ inputs.list_name}}
-    - ${{ inputs.card_name}}
-    - ${{ inputs.card_description}}
+    - ${{ inputs.api_key }}
+    - ${{ inputs.token }}
+    - ${{ inputs.board_id }}
+    - ${{ inputs.list_name }}
+    - ${{ inputs.card_name }}
+    - ${{ inputs.card_description }}
