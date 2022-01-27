@@ -1,0 +1,13 @@
+name: Trello Create Card Action Demo
+on: [push]
+jobs:
+  Create-A-New-Trello-Card:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the action
+        uses: ./
+        with:
+          api_key: ${{secrets.TRELLO_API_KEY}}
+          token: ${{secrets.TRELLO_TOKEN}}
+          board_id: "X9rkjYS5"
+          list_name: "To Do"

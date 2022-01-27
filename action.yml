@@ -1,0 +1,44 @@
+name: 'Trello Create Card Action'
+description: 'Call the Trello API to add a new card to a board.'
+inputs:
+  api_key:
+    description: 'API key issued by Trello'
+    required: true
+    default: ""
+  token:
+    description: 'Access token issued by Trello'
+    required: true
+    default: ""
+  list_id:
+    description: 'Access token issued by Trello'
+    required: false
+    default: ""
+  board_id:
+    description: 'ID of the board to be updated.'
+    required: false
+    default: ""
+  list_name:
+    description: 'Name of the list where the card shall be added (default: To Do)'
+    required: false
+    default: "To Do"
+  card_name:
+    description: 'Name of the card'
+    required: true
+    default: "Hello there"
+  card_description:
+    description: 'Description of the card'
+    required: false
+    default: "General Kenobi"
+outputs:
+  result:
+    description: 'Response of the creation process'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.api_key}}
+    - ${{ inputs.token}}
+    - ${{ inputs.board_id}}
+    - ${{ inputs.list_name}}
+    - ${{ inputs.card_name}}
+    - ${{ inputs.card_description}}
