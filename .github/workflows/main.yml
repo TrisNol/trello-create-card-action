@@ -3,13 +3,17 @@ on: [push]
 jobs:
   Create-A-New-Trello-Card:
     runs-on: ubuntu-latest
+
+    env:
+      API_KEY: ${{ secrets.TRELLO_API_KEY }}
+      TOKEN: ${{ secrets.TRELLO_TOKEN }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Test the action
         uses: ./
         with:
-          api_key: ${{secrets.TRELLO_API_KEY}}
-          token: ${{secrets.TRELLO_TOKEN}}
+          api_key: env.API_KEY
+          token: env.TOKEN
           board_id: "X9rkjYS5"
           list_name: "To Do"
