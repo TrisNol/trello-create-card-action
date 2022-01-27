@@ -6,7 +6,7 @@
 This repo contains a GitHub Action for creating Trello cards automatically.
 
 ## How to use
-The action has two modes of operation: It can either use a given list_id, which identifies the list of a board, or it will determine the list_id itself by identifying it based on the list´s name.
+The action has two modes of operation: It can either use a given ```list_id```, which identifies the list of a board, or it will determine the ```list_id``` itself by identifying it based on the list´s name.
 
 If the ```list_id``` is not provided, the ```board_id``` and ```list_name``` have to be present:
 ```yml      
