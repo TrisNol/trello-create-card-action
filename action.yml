@@ -1,5 +1,8 @@
 name: 'Trello Create Card Action'
 description: 'Call the Trello API to add a new card to a board.'
+branding:
+  icon: 'alert-octagon'  
+  color: 'gray-dark' 
 inputs:
   api_key:
     description: 'API key issued by Trello'
