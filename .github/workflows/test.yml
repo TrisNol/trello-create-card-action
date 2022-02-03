@@ -14,3 +14,4 @@ jobs:
           token: ${{ secrets.TRELLO_TOKEN }}
           board_id: "e44b6oBU"
           list_name: "To Do"
+          card_name: ${{ github.sha }}
