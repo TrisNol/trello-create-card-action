@@ -21,6 +21,8 @@ def main():
             querystring = {"key": api_key,
                 "token": token}
             res_board = requests.request("GET", url_board, params=querystring)
+            if res_board is None:
+                raise Exception(f"The list {list_name} could not be found in board {board_id}")
             lists = json.loads(res_board.text)
             for column in lists:
                 if column['name'] == list_name:
