@@ -28,8 +28,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: |
-            To download execute the following statement:
-            pip install git+https://github.com/TrisNol/python-sample-package@${{ env.RELEASE_VERSION }}
+          bodyFile: README.md
           draft: false
           prerelease: false
