@@ -1,0 +1,17 @@
+name: Test the Action
+on: [push]
+jobs:
+  Test-by-creating-a-card:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Test the action
+        uses: ./
+        with:
+          api_key: ${{ secrets.TRELLO_API_KEY }}
+          token: ${{ secrets.TRELLO_TOKEN }}
+          board_id: "e44b6oBU"
+          list_name: "To Do"
+          card_name: ${{ github.sha }}

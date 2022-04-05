@@ -1,16 +1,27 @@
-name: Trello Create Card Action Demo
+name: Build and scan action
 on: [push]
 jobs:
-  Create-A-New-Trello-Card:
+  Build-and-scan:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Test the action
-        uses: ./
+
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.8@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          api_key: ${{ secrets.TRELLO_API_KEY }}
-          token: ${{ secrets.TRELLO_TOKEN }}
-          board_id: "X9rkjYS5"
-          list_name: "To Do"
+          args: --severity-threshold=high
+
+      - name: Build Docker image
+        run: |
+          docker build . -t ${{ github.event.repository.name }}
+          
+      # - name: Run Snyk to check Docker image for vulnerabilities
+      #   uses: snyk/actions/docker@master
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      #   with:
+      #     image: ${{ github.event.repository.name }}
