@@ -1,0 +1,16 @@
+name: Test 
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create a Trello Card
+      uses: TrisNol/trello-create-card-action@main
+      with:
+        api_key: ${{ secrets.TRELLO_API_KEY }}
+        token: ${{ secrets.TRELLO_TOKEN }}
+        board_id: "e44b6oBU"
+        list_name: "To Do"
+        card_name: "I'm a test card"
+        card_description: "I'm the card's description"
