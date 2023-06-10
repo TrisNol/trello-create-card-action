@@ -5,4 +5,4 @@ COPY . /github/workspace/
 
 RUN pip3 install -r requirements.txt
 
-CMD python main.py
+ENTRYPOINT ["python", "main.py"]
