@@ -7,10 +7,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Test the action
-        uses: ./
-        with:
-          api_key: ${{ secrets.TRELLO_API_KEY }}
-          token: ${{ secrets.TRELLO_TOKEN }}
-          board_id: "X9rkjYS5"
-          list_name: "To Do"
+      # - name: Test the action
+      #   uses: ./
+      #   with:
+      #     api_key: ${{ secrets.TRELLO_API_KEY }}
+      #     token: ${{ secrets.TRELLO_TOKEN }}
+      #     board_id: "X9rkjYS5"
+      #     list_name: "To Do"

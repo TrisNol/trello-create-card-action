@@ -1,8 +1,7 @@
 FROM python:3.9.10-slim-buster
-WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r /app/requirements.txt
 
-ENTRYPOINT ["python", "./main.py"]
+ENTRYPOINT ["python", "/app/main.py"]
