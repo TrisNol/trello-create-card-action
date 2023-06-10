@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create a Trello Card
-      uses: TrisNol/trello-create-card-action@main
+      uses: TrisNol/trello-create-card-action@v0.0.3
       with:
         api_key: ${{ secrets.TRELLO_API_KEY }}
         token: ${{ secrets.TRELLO_TOKEN }}
