@@ -1,8 +1,8 @@
 FROM python:3.9.10-slim-buster
-WORKDIR /github/workspace
+WORKDIR /app
 
-COPY . /github/workspace/
+COPY . /app
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["ls -l", "&&", "python", "main.py"]
